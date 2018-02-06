@@ -25,7 +25,7 @@ SECRET_KEY = '#j2kn@+39++i7o=76=$k8ycuh1(8hyyes771sqi42xqw#2^(te'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['vcm-2971.vm.duke.edu',]
 
 
 # Application definition
@@ -75,8 +75,8 @@ WSGI_APPLICATION = 'ece590hw1.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ece590hw1',
     }
 }
 

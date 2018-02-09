@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rsvp.apps.RsvpConfig',
 ]
 
 MIDDLEWARE = [
@@ -47,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'ece590hw1.middleware.LoginRequireMiddleware',
 ]
 
 ROOT_URLCONF = 'ece590hw1.urls'
@@ -118,3 +120,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+LOGIN_REDIRECT_URL = 'http://vcm-2971.vm.duke.edu:8080/rsvp/profile/'
+LOGIN_URL='rsvp/login'
+LOGIN_EXEMPT_URLS=(
+    'rsvp/logout/',
+    'rsvp/register/',
+)

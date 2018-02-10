@@ -20,6 +20,9 @@ post_save.connect(create_profile,sender=User)
 class Event(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
     name = models.CharField(max_length=100,default='')
+    user_position = models.CharField(max_length=100,default='')
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
 """def create_event(sender,**kwargs):
     if kwargs['created']:
         event = Event.objects.create(user=kwargs['user'])

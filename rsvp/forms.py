@@ -50,3 +50,9 @@ class CreateEventForm(ModelForm):
             'name',
         )
     
+class InviteGuest(ModelForm):
+    class Meta:
+        model = Event
+        fields=(
+            'user',
+        )

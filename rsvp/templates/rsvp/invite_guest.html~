@@ -1,0 +1,18 @@
+{% extends 'base.html'  %}
+
+{% block body %}
+
+<div class="container">
+  <h1>Invite Guset</h1>
+  <form method = "post">
+    {% csrf_token  %}
+    {{form.as_p}}
+    <button type="submit" class="btn btn-outline-info">Add</button>
+  </form>
+  <h3>{{ text }}</h3>
+  {% for post in posts  %}
+  <h3>{{ post.user }}</h3>
+  <p>{{ post.created }}</p>
+  {% endfor  %}
+  </div>
+ {% endblock %}
